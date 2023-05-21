@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
-class UserController extends Controller
+class RegisterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('/register', [
+        return view('register', [
             'title' => 'Halaman Register'
         ]);
     }
@@ -53,9 +53,9 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
-            'avatar' => $request->file('avatar')->store('img'),
+            'avatar' => $request->file('avatar')->store('avatar')
         ];
-        // dd($data);
+
         User::create($data);
 
         return Redirect('/register')->with(['success' => "Registration Success"]);
