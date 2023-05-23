@@ -17,7 +17,7 @@
 - For now, it's just Create, Read, Update account with profile picture
 
 ## Upcoming Additional Features
-- Multiuser
+- Multi role
 - Admin Panel
 - TODO Multiuser
 - etc
